@@ -1,9 +1,51 @@
 ---
 import "../styles/global.css";
 import Frame from "../layout/frame.astro";
+import Soundcloud from "../components/Soundcloud.astro";
 ---
 
 <Frame pageTitle="Hello!">
   <h1>Astro</h1>
   <p>Welcome to Astro! This is a simple Astro app with a global CSS file.</p>
+  <image src="/images/forside.jpg"/>
+  <button id="button">Click me</button>
+  <p id="demo"></p>
 </Frame>
+
+<script>
+// Get the target date and time for the countdown in milliseconds since January 1, 1970, 00:00:00 UTC
+const countDownDate = new Date("Aug 22, 2024 9:00:00").getTime();
+
+// Function to update the countdown display
+function updateCountdown() {
+  // Get the current date and time in milliseconds since January 1, 1970, 00:00:00 UTC
+  const now = new Date().getTime();
+
+  // Calculate the time difference between the current date/time and the countdown target date/time
+  const distance = countDownDate - now;
+
+  // Calculate the number of days, hours, minutes, and seconds remaining
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Construct the countdown display string
+  const countdownDisplay = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+  // Update the HTML element with id "demo" to display the countdown
+  document.getElementById("demo").innerHTML = countdownDisplay;
+
+  // If the countdown has reached zero or below, stop the countdown and display a message
+  if (distance < 0) {
+    clearInterval(countdownInterval); // Stop the countdown timer
+    document.getElementById("demo").innerHTML = "Now we party!"; // Display party message
+  }
+}
+
+  // Initial call to update countdown immediately
+  updateCountdown();
+
+  // Update countdown every second
+  const countdownInterval = setInterval(updateCountdown, 1000);
+</script>
