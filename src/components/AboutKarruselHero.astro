@@ -1,7 +1,44 @@
 ---
-const {imgPath, overskrift, text} = Astro.props
+const { style, imgPath, header, text } = Astro.props;
 ---
+<div class="grid_1-1">
+    <div class="textbox" >
+        <h3>{header}</h3>
+        <p class="text">{text}</p>
+    </div>
+    <div class={style} id="imageContainer">
+        <img src={imgPath} alt="" />
+    </div>
+</div>
 
-<img src={imgPath} alt="">
-<div><h3>{overskrift}</h3>
-<p>{text}</p></div>
+<style>
+@media (min-width: 600px) {
+    .text{
+        max-width: 70ch;
+        margin-left: 25px
+    }
+    .textbox{
+        grid-column: span 6;
+        margin: auto;
+    }
+    .grid_1-1{
+        display: grid;
+        grid-template-columns: repeat(11, 1fr);
+    }
+    .fliped{
+        grid-column: span 5;
+        order: -1;
+    }
+    .normal{
+        grid-column: span 5;
+    }
+    img{
+        object-fit: contain;
+        width: 100%;
+    }
+    #imageContainer{
+        margin: 20px auto;
+        height: 400px;
+    }
+}
+</style>
