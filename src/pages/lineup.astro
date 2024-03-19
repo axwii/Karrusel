@@ -7,9 +7,13 @@ import Frame from "../layout/frame.astro";
   <h1>LINEUP</h1>
   <h2>This is the complete lineup for Karrusel 2024</h2>
 
-  <button id="filter">Thursday</button>
-  <button id="filter">Friday</button>
-  <button id="filter">Saturday</button>
+  <div class="filter-container">
+    <button class="filter">Thursday</button>
+    <button class="filter">Friday</button>
+  </div>
+  <div class="filter-container">
+    <button class="filter">Saturday</button>
+  </div>
 
   <img src="https://i.ibb.co/NpxKS9r/grainy-karrusel.webp" alt="" />
   <h2>Anna Logic</h2>
@@ -31,9 +35,17 @@ import Frame from "../layout/frame.astro";
 </Frame>
 
 <style>
-  #filter {
+  .filter {
     background-color: #d44402;
+    padding: 10px 20px;
+    border-radius: 40px;
+    margin: 5px;
   }
+
+  .filter-container {
+    text-align: center;
+  }
+
   h1 {
     text-align: center;
   }
