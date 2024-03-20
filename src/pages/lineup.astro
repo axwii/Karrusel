@@ -2,18 +2,18 @@
 import "../styles/global.css";
 import Frame from "../layout/frame.astro";
 
-const data = await fetch(
-  "https://myhqkwqioylnwcjprmet.supabase.co/rest/v1/Lineup",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aHFrd3Fpb3lsbndjanBybWV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTE0NDIsImV4cCI6MjAyNjA2NzQ0Mn0.RvhZ9rBSrv_h9t4TzuRaHdc5JRL4EhTOKGCG40tyWSA",
-    },
-  }
-).then((res) => res.json());
+// const data = await fetch(
+//   "https://myhqkwqioylnwcjprmet.supabase.co/rest/v1/Lineup",
+//   {
+//     method: "GET",
+//     headers: {
+//       apikey:
+//         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aHFrd3Fpb3lsbndjanBybWV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTE0NDIsImV4cCI6MjAyNjA2NzQ0Mn0.RvhZ9rBSrv_h9t4TzuRaHdc5JRL4EhTOKGCG40tyWSA",
+//     },
+//   }
+// ).then((res) => res.json());
 
-console.log(data);
+// console.log(data);
 ---
 
 <Frame pageTitle="Lineup">
