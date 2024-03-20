@@ -5,10 +5,31 @@ import Countdown from "../components/Countdown.astro";
 ---
 
 <Frame pageTitle="Karrusel - home">
-  <h1>Astro</h1>
-  <p>Welcome to Astro! This is a simple Astro app with a global CSS file.</p>
-  <img src="/images/forside.jpg"/>
-  <button id="button">Click me</button>
-  <p id="demo"></p>
-  <Countdown/>
+  <div id="home">
+    <img src="/images/forside.jpg" />
+    <div id="cta_container">
+      <button>Buy tickets</button>
+      <button>About us</button>
+    </div>
+    <h1>We are ready in...</h1>
+    <Countdown />
+    <button>Lineup</button>
+  </div>
 </Frame>
+
+<style>
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  button{
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
