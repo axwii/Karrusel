@@ -3,19 +3,19 @@ const { style, imgPath, header, text } = Astro.props;
 ---
 <div class="grid_1-1">
     <div class="textbox" >
-        <h3>{header}</h3>
+        <h2>{header}</h2>
         <p class="text">{text}</p>
     </div>
-    <div class={style} id="imageContainer">
-        <img src={imgPath} alt="" />
-    </div>
+
+        <img class={style} src={imgPath} alt="" />
+
 </div>
 
 <style>
 @media (min-width: 600px) {
     .text{
-        max-width: 70ch;
-        margin-left: 25px
+        max-width: 78ch;
+        margin: 15px 0 0 35px;
     }
     .textbox{
         grid-column: span 6;
@@ -28,17 +28,16 @@ const { style, imgPath, header, text } = Astro.props;
     .fliped{
         grid-column: span 5;
         order: -1;
+        
     }
     .normal{
         grid-column: span 5;
     }
     img{
         object-fit: contain;
-        width: 100%;
-    }
-    #imageContainer{
+        width: 78%;
         margin: 20px auto;
-        height: 400px;
     }
+
 }
 </style>
