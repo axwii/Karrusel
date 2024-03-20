@@ -1,6 +1,19 @@
 ---
 import "../styles/global.css";
 import Frame from "../layout/frame.astro";
+
+const data = await fetch(
+  "https://myhqkwqioylnwcjprmet.supabase.co/rest/v1/Lineup",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aHFrd3Fpb3lsbndjanBybWV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTE0NDIsImV4cCI6MjAyNjA2NzQ0Mn0.RvhZ9rBSrv_h9t4TzuRaHdc5JRL4EhTOKGCG40tyWSA",
+    },
+  }
+).then((res) => res.json());
+
+console.log(data);
 ---
 
 <Frame pageTitle="Lineup">
@@ -15,38 +28,36 @@ import Frame from "../layout/frame.astro";
 
   <div class="artist_grid">
     <div class="artist">
-      <img src="https://i.ibb.co/0hSZbyX/anna.webp" alt="" />
+      <img src="../../public/images/anna.webp" alt="" />
       <h2>Anna Logic</h2>
     </div>
 
     <div class="artist">
-      <img src="https://i.ibb.co/fNZJV1T/haai.webp" alt="" />
+      <img src="../../public/images/haai.webp" alt="" />
       <h2>HAAi</h2>
     </div>
 
     <div class="artist">
-      <img src="https://i.ibb.co/1bnX6QG/narciss.webp" alt="" />
+      <img src="../../public/images/narciss.webp" alt="" />
       <h2>Narciss</h2>
     </div>
 
     <div class="artist">
-      <img src="https://i.ibb.co/0CfG8ZT/mira.webp" alt="" />
+      <img src="../../public/images/mira.webp" alt="" />
       <h2>Mira</h2>
     </div>
 
     <div class="artist">
-      <img src="https://i.ibb.co/ZhKPSz4/fjaak.webp" alt="" />
+      <img src="../../public/images/fjaak.webp" alt="" />
       <h2>FJAAK</h2>
     </div>
 
     <div class="artist">
-      <img src="https://i.ibb.co/smmCzcf/spfdj.webp" alt="" />
+      <img src="../../public/images/spfdj.webp" alt="" />
       <h2>SPFDJ</h2>
     </div>
   </div>
 </Frame>
-
-<img src="../" alt="" />
 
 <style>
   img {
