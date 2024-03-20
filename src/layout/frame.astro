@@ -27,62 +27,62 @@ const { pageTitle } = Astro.props;
           <p>Refshalevej 193, 1432 Copenhagen</p>
         </div>
         <div class="pages">
-        <a href=""><h3>Front page</h3></a>
-        <a href=""><h3>Lineup</h3></a>
-        <a href=""><h3>About us</h3></a>
-    </div>
+          <a href=""><h3>Front page</h3></a>
+          <a href=""><h3>Lineup</h3></a>
+          <a href=""><h3>About us</h3></a>
+        </div>
       </div>
       <div class="SoMe">
         <div class="icons">
-<img id="insta" src="/images/instagram.png" alt="instagram">
-<img id="facebook" src="images/Vector.png" alt="facebook">
-</div>
-</div>
+          <img id="insta" src="/images/instagram.png" alt="instagram" />
+          <img id="facebook" src="images/Vector.png" alt="facebook" />
+        </div>
+      </div>
     </footer>
   </body>
 </html>
 
 <style>
-    *{
-        margin: 10px;
-    }
   footer {
     background: linear-gradient(90deg, #6f4b91 14%, #553176 55%, #2b0f44 100%);
-    margin: 0px
   }
-  .pages h3{
+  footer p,h3,a,img,div {
+    margin: 10px;
+  }
+
+  .pages h3 {
     margin-top: -10px;
-    margin-bottom: 2px
+    margin-bottom: 2px;
   }
-  .grid_1-2-2{
+  .grid_1-2-2 {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
-    margin: 0px
+    margin: 0px;
   }
-  footer img{
-width: 50%;
-height: auto;
-margin: auto;
+  footer img {
+    width: 50%;
+    height: auto;
+    margin: auto;
   }
-.SoMe img{
+  .SoMe img {
     width: 30%;
     height: auto;
-}
-.SoMe{
+  }
+  .SoMe {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
     margin: 0px;
-}
-#insta{
+  }
+  #insta {
     width: 30%;
     height: auto;
-}
-#facebook{
+  }
+  #facebook {
     width: 20%;
-    height: auto
-}
-.icons{
+    height: auto;
+  }
+  .icons {
     display: flex;
-}
+  }
 </style>
