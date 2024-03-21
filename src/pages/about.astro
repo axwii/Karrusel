@@ -5,8 +5,10 @@ import Hero from "../components/AboutKarruselHero.astro";
 ---
 
 <Frame pageTitle="About Karrusel">
+  <div class="imagecontainer">
   <img class="topImg" src="../../public/images/grain2.jpg" alt="gk"/>
   <h1 class="about">About Us</h1>
+</div>
   <Hero style="fliped"
     header="Festival Experience"
     text="Karrusel belives in the right to a harassment-free festival experience. we belive in the right of everyone to express themselves. Karrusel welcomes everybody - all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community. If you feel unsafe, please reach out to our awareness team. They will be wearing a pink vests and walk around the site and be at their base (see on this map). Ask any festival staff and they will guide you to the them. Take responsibility for your own actions. Respect your own and others boundaries. Speak up rather than look the other way"
@@ -26,12 +28,27 @@ import Hero from "../components/AboutKarruselHero.astro";
 <style>
   .about{
     position: absolute;
-    top: 360px;
-    left: 92px;
+top: 175px;
+left: 50px;
     z-index: 2;
-    font-size: 6em;
   }
+  .topImg{
+    position: relative;
+  }
+  @media (max-width: 600px){
+  .topImg{
+    width: 110%;
+    margin-left: -27px;
+  }
+}
+  @media (min-width: 600px){
+    .about{
+      top: 360px;
+    left: 92px;
+    font-size: 6em;
+    }
   .topImg{
     margin-left: -37px;
   }
+}
 </style>
