@@ -37,7 +37,7 @@ import Hero from "../components/AboutKarruselHero.astro";
 
   .about{
     position: absolute;
-top: 175px;
+top: 172px;
 left: 50px;
     z-index: 2;
   }
@@ -46,18 +46,31 @@ left: 50px;
   }
   @media (max-width: 600px){
   .topImg{
-    width: 110%;
+    width: 107.3%;
     margin-left: -27px;
   }
 }
   @media (min-width: 600px){
     .about{
-      top: 360px;
+      top: 350px;
     left: 92px;
     font-size: 6em;
     }
   .topImg{
-    margin-left: -37px;
+    margin-left: -24px;
   }
 }
+/* forsøg på et ekstra breakpoint */
+
+/* @media (max-width: 800px){
+  .topImg{
+    width: 104.9%;
+    margin-left: -27px;
+  }
+  .about{
+      top: 220px;
+    left: 62px;
+    font-size: 4em;
+    }
+} */
 </style>
