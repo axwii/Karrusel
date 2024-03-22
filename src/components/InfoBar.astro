@@ -1,48 +1,81 @@
+---
+const { scene, date, time } = Astro.props;
+---
+
 <div id="container">
-    <div id="sceneholder">
-        <p class="text">Scene:</p>
-        <p class="text">test</p>
-    </div>
-    <div id="dateholder">
-        <p class="text">Date:</p>
-        <p class="text">test</p>
-    </div>
-    <div id="timeholder">
-        <p class="text">Time:</p>
-        <p class="text">test</p>
-    </div>
+  <div id="sceneholder">
+    <p class="text">Scene:</p>
+    <p class="text">{scene}</p>
+  </div>
+  <div id="dateholder">
+    <p class="text" id="day">Date:</p>
+    <p class="text" id="date">{date}</p>
+  </div>
+  <div id="timeholder">
+    <p class="text">Time:</p>
+    <p class="text">{time}</p>
+  </div>
 </div>
 
 <style>
-    #container{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background: rgb(76,66,56);
-background: linear-gradient(0deg, rgba(76,66,56,1) 0%, rgba(111,75,145,1) 0%, rgba(212,68,2,1) 100%);
-        padding-top: 20px;
-        padding-bottom: 20px;
-        
-    }
-    #sceneholder{
-        display: flex;
-        gap: 0.3rem;
-        align-items: baseline;
-        
-    }
-    #dateholder{
-        display: flex;
-        gap: 0.3rem;
-        align-items: baseline;
-        
-    }
-    #timeholder{
-        display: flex;
-        gap: 0.3rem;
-        align-items: baseline;
-        
-    }
-    .text{
-        font-size: 20px;
-    }
+  #container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(76, 66, 56);
+    background: linear-gradient(
+      0deg,
+      rgba(76, 66, 56, 1) 0%,
+      rgba(111, 75, 145, 1) 0%,
+      rgba(212, 68, 2, 1) 100%
+    );
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #sceneholder {
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
+  }
+  #dateholder {
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
+  }
+  #timeholder {
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
+  }
+  .text {
+    font-size: 20px;
+  }
 </style>
+
+<script>
+  const dayElement = document.getElementById("day");
+  // Retrieve the date from the element content
+  const dateElement = document.getElementById("date");
+  const dateString = dateElement.textContent.trim();
+
+  // Assuming the date format is "YYYY-MM-DD"
+  const dateParts = dateString.split("-");
+  const year = parseInt(dateParts[0]);
+  const month = parseInt(dateParts[1]) - 1; // Month is zero-indexed
+  const day = parseInt(dateParts[2]);
+
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const dayIndex = new Date(year, month, day).getDay();
+  const dayName = dayNames[dayIndex];
+
+  // Update the content of the date element
+  dayElement.textContent = dayName + ":";
+</script>
