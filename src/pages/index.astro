@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Frame from "../layout/frame.astro";
 import Countdown from "../components/Countdown.astro";
+import Artist from "../components/ArtistListCard.astro";
 ---
 
 <Frame pageTitle="Karrusel - home">
@@ -13,6 +14,11 @@ import Countdown from "../components/Countdown.astro";
     </div>
     <h1>We are ready in...</h1>
     <Countdown />
+    <div class="artist_grid">
+      <Artist name="Anna Logic" imgPath="/images/anna.webp" link="/artist" />
+      <Artist name="HAAi" imgPath="/images/haai.webp" link="/artist" />
+      <Artist name="Narciss" imgPath="/images/narciss.webp" link="/artist" />
+    </div>
     <a href="/lineup"><button>Lineup</button></a>
   </div>
 </Frame>
@@ -22,7 +28,7 @@ import Countdown from "../components/Countdown.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   button{
     padding: 10px 20px;
@@ -31,5 +37,15 @@ import Countdown from "../components/Countdown.astro";
     background-color: #000;
     color: #fff;
     cursor: pointer;
+  }
+
+  @media (min-width: 800px) {
+    .artist_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
   }
 </style>
