@@ -1,51 +1,48 @@
+---
+const { name, nationality, imgPath } = Astro.props;
+---
+
 <div id="big">
-    <div class="holder">
-        <div id="smail"></div>
-    <h1 id="Aname">Anna Logic</h1>
-    <h2 id="nas">DK</h2>
-    </div>
-    
+  <div class="holder">
+    <div id="smail" style=`background-image: url("${imgPath}");`></div>
+    <h1 id="Aname">{name}</h1>
+    <h2 id="nas">{nationality}</h2>
+  </div>
 </div>
+
 <style>
-    #big{
-        background-image: url("public/images/grain2.jpg");
-        width: 100%;
-        height: 100%;
-        
-        padding-bottom:0px;
-        padding-top: 120px;
-      
-    }
-    #smail{
-        background-image: url("public/images/a3.webp");
-        height:250px;
-        width: 250px;
-        border-radius: 50%;
-        margin-left: 30%; 
-        margin-bottom: 70px;
-    }
-    .holder{
-        margin-left: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr) 0.2fr;
-        
-        align-items: end;
-      
-        
-    }
-    #Aname{
-       font-size: 130px;
-       font-weight: 400;
-       padding-bottom: 30px;
-       margin-left: 20%;
-    }
-    #nas{
-        font-size: 40px;
-        font-weight: 400;
-        padding-bottom: 10px;
-        margin-left: 50px;
-        margin-bottom: 20px;
-    }
-
-
+  #big {
+    background-image: url("/images/grain2.jpg");
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0px;
+    padding-top: 90px;
+  }
+  #smail {
+    height: 250px;
+    width: 250px;
+    background-position: 450px -70px;
+    border-radius: 50%;
+    margin-left: 30%;
+    margin-bottom: 70px;
+  }
+  .holder {
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 0.2fr;
+    align-items: end;
+  }
+  #Aname {
+    font-size: 130px;
+    font-weight: 400;
+    padding-bottom: 30px;
+    margin-left: 20%;
+  }
+  #nas {
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
 </style>

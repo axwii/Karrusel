@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Frame from "../layout/frame.astro";
+import Artist from "../components/ArtistListCard.astro";
 
 // const data = await fetch(
 //   "https://myhqkwqioylnwcjprmet.supabase.co/rest/v1/Lineup",
@@ -27,54 +28,16 @@ import Frame from "../layout/frame.astro";
   </div>
 
   <div class="artist_grid">
-    <div class="artist">
-      <a href="/artist">
-        <img src="/images/anna.webp" alt="" />
-      </a>
-      <h2>Anna Logic</h2>
-    </div>
-
-    <div class="artist">
-      <a href="/artist">
-        <img src="/images/haai.webp" alt="" />
-      </a>
-      <h2>HAAi</h2>
-    </div>
-
-    <div class="artist">
-      <a href="/artist">
-        <img src="/images/narciss.webp" alt="" />
-      </a>
-      <h2>Narciss</h2>
-    </div>
-
-    <div class="artist">
-      <a href="/artist">
-        <img src="/images/mira.webp" alt="" />
-      </a>
-      <h2>Mira</h2>
-    </div>
-
-    <div class="artist">
-      <a href="/artist">
-        <img src="/images/fjaak.webp" alt="" />
-      </a>
-      <h2>FJAAK</h2>
-    </div>
-
-    <div class="artist">
-      <a href="/artist">
-        <img src="/images/spfdj.webp" alt="" />
-      </a>
-      <h2>SPFDJ</h2>
-    </div>
+    <Artist name="Anna Logic" imgPath="/images/anna.webp" link="/artist" />
+    <Artist name="HAAi" imgPath="/images/haai.webp" link="/artist" />
+    <Artist name="Narciss" imgPath="/images/narciss.webp" link="/artist" />
+    <Artist name="Mira" imgPath="/images/mira.webp" link="/artist" />
+    <Artist name="FJAAK" imgPath="/images/fjaak.webp" link="/artist" />
+    <Artist name="SPFDJ" imgPath="/images/spfdj.webp" link="/artist" />
   </div>
 </Frame>
 
 <style>
-  img {
-    border-radius: 10px;
-  }
   .filter {
     background-color: #d44402;
     padding: 10px 50px;
@@ -106,10 +69,6 @@ import Frame from "../layout/frame.astro";
       grid-gap: 20px;
       margin-left: 20px;
       margin-right: 20px;
-    }
-
-    .artist {
-      text-align: center;
     }
   }
 </style>

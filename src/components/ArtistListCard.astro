@@ -1,0 +1,29 @@
+---
+const { name, imgPath, link } = Astro.props;
+---
+
+<div class="artist">
+  <a href={link}>
+    <img src={imgPath} alt="" />
+  </a>
+  <h2>{name}</h2>
+</div>
+
+<style>
+  img {
+    border-radius: 10px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 800px) {
+
+    .artist {
+      text-align: center;
+    }
+  }
+</style>
